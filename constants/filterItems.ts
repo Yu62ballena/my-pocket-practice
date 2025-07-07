@@ -1,32 +1,28 @@
-import { ComponentType } from "react";
-import { FaHeart, FaArchive, FaHome } from "react-icons/fa";
-import { LuNewspaper } from "react-icons/lu";
-
 export interface FilterItemsInterface {
   id: string;
   name: string;
-  icon: ComponentType;
+  href: string;
 }
 
 export const filterItems: FilterItemsInterface[] = [
   {
-    id: "all",
-    name: "すべて",
-    icon: LuNewspaper,
-  },
-  {
     id: "home",
     name: "ホーム",
-    icon: FaHome,
+    href: "/",
+  },
+  {
+    id: "all",
+    name: "すべて",
+    href: "/?listtype=all",
   },
   {
     id: "favorite",
     name: "お気に入り",
-    icon: FaHeart,
+    href: "/?listtype=liked",
   },
   {
     id: "archive",
     name: "アーカイブ",
-    icon: FaArchive,
+    href: "/?listtype=archived",
   },
 ];
